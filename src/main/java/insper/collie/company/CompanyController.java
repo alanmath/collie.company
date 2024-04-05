@@ -18,4 +18,24 @@ public interface CompanyController {
     public ResponseEntity<CompanyInfo> create(
         @RequestBody(required = true) CompanyInfo in
     );
+
+    @GetMapping("/company/{id}")
+    public ResponseEntity<CompanyInfo> getCompany(
+        @PathVariable(required = true) String id
+    );
+
+    @GetMapping("/company")
+    public ResponseEntity<List<CompanyInfo>> getAllCompanies();
+
+
+    @PutMapping("/company/{id}")
+    public ResponseEntity<CompanyInfo> updateCompany(
+        @PathVariable(required = true) String id,
+        @RequestBody(required = true) CompanyInfo in
+    );
+
+    @DeleteMapping("/company/{id}")
+    public ResponseEntity<CompanyInfo> deleteCompany(
+        @PathVariable(required = true) String id
+    );
 }
