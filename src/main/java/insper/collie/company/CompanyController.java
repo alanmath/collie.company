@@ -24,6 +24,11 @@ public interface CompanyController {
         @PathVariable(required = true) String id
     );
 
+    @GetMapping("/company/exists/{id}")
+    public ResponseEntity<Boolean> isCompany(
+        @PathVariable(required = true) String id
+    );
+
     @GetMapping("/company")
     public ResponseEntity<List<CompanyInfo>> getAllCompanies();
 
